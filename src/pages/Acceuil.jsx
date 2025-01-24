@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react';
+import Banner from '../components/Banner';
+import image from '../img/BannerIMG.png';
 
-const Acceuil = () => {
+function Acceuil() {
     return (
         <div>
-            <h1>Bienvenue sur la page d'accueil !</h1>
-            <p>Ceci est la page principale de l'application.</p>
+            <Banner image={image} text="Chez vous, partout et ailleurs" />
         </div>
     );
-};
+}
 
 export default Acceuil;
+
