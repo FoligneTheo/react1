@@ -1,0 +1,19 @@
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card__title {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
