@@ -7,7 +7,7 @@ function LogementDetails() {
     const { id } = useParams();
     const logement = logements.find((item) => item.id === id);
 
-    // Déclaration des hooks en dehors de tout bloc conditionnel
+    // State pour le carrousel et les sections
     const [currentImage, setCurrentImage] = useState(0);
     const [isDescriptionOpen, setDescriptionOpen] = useState(false);
     const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
@@ -28,7 +28,7 @@ function LogementDetails() {
 
     return (
         <div className="logement-details">
-            <h1 className="logement-details__title">{logement.title}</h1>
+            {/* Carrousel */}
             <div className="logement-details__carousel">
                 <img
                     src={logement.pictures[currentImage]}
@@ -39,45 +39,61 @@ function LogementDetails() {
                 <button className="carousel__button next" onClick={handleNextImage}>›</button>
                 <p>{currentImage + 1}/{logement.pictures.length}</p>
             </div>
-            <div className="logement-details__info">
-                <div className="logement-details__host">
-                    <img src={logement.host.picture} alt={logement.host.name} />
-                    <p>{logement.host.name}</p>
+
+            {/* Contenu principal */}
+            <div className="logement-details__content">
+                {/* Section gauche */}
+                <div className="logement-details__left">
+                    <h1 className="logement-details__title">{logement.title}</h1>
+                    <p className="logement-details__location">{logement.location}</p>
+                    <div className="logement-details__tags">
+                        {logement.tags.map((tag, index) => (
+                            <span key={index} className="tag">{tag}</span>
+                        ))}
+                    </div>
                 </div>
-                <p className="logement-details__location">{logement.location}</p>
-                <p className="logement-details__rating">
-                    Note : {logement.rating} ★
-                </p>
-                <div className="logement-details__tags">
-                    {logement.tags.map((tag, index) => (
-                        <span key={index} className="tag">{tag}</span>
-                    ))}
+
+                {/* Section droite */}
+                <div className="logement-details__right">
+                    <img
+                        src={logement.host.picture}
+                        alt={logement.host.name}
+                        className="host__picture"
+                    />
+                    <p className="host__name">{logement.host.name}</p>
+                    <p className="host__rating">Note : {logement.rating} ★</p>
                 </div>
             </div>
-            <div className="logement-details__section">
+
+            {/* Boutons Description et Équipements */}
+            <div className="logement-details__buttons">
                 <button
                     className="toggle-button"
                     onClick={() => setDescriptionOpen((prev) => !prev)}
                 >
                     Description
                 </button>
-                {isDescriptionOpen && <p className="logement-details__description">{logement.description}</p>}
-            </div>
-            <div className="logement-details__section">
                 <button
                     className="toggle-button"
                     onClick={() => setEquipmentsOpen((prev) => !prev)}
                 >
                     Équipements
                 </button>
-                {isEquipmentsOpen && (
-                    <ul className="logement-details__equipments">
-                        {logement.equipments.map((equipment, index) => (
-                            <li key={index}>{equipment}</li>
-                        ))}
-                    </ul>
-                )}
             </div>
+
+            {/* Sections Description et Équipements */}
+            {isDescriptionOpen && (
+                <div className="logement-details__description">
+                    <p>{logement.description}</p>
+                </div>
+            )}
+            {isEquipmentsOpen && (
+                <ul className="logement-details__equipments">
+                    {logement.equipments.map((equipment, index) => (
+                        <li key={index}>{equipment}</li>
+                    ))}
+                </ul>
+            )}
         </div>
     );
 }

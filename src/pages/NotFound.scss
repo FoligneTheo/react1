@@ -1,0 +1,36 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    color: #ff6060; /* Même couleur que le logo */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.not-found h1 {
+    font-size: 404px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.not-found p {
+    font-size: 40px;
+    margin: 10px 0 30px 0;
+    color: #ff6060; /* Même couleur que le titre */
+}
+
+.not-found a {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid #000;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.not-found a:hover {
+    color: #ff6060;
+    border-color: #ff6060;
+}
