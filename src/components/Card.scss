@@ -5,6 +5,8 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover {
@@ -16,4 +18,11 @@
     padding: 10px;
     font-size: 18px;
     font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card__title:hover {
+    text-decoration: none;
+    
 }

@@ -1,14 +1,23 @@
 .footer {
-    width: 100%;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: auto;
-}
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    padding: 20px 0; /* Espacement vertical */
 
-.footer__image {
-    width: 100%;
-    max-width: 1440px;
-    height: auto;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px; /* Espacement entre les éléments */
+    }
+
+    &__logo {
+        width: 120px; /* Taille du logo */
+        height: auto;
+    }
+
+    &__text {
+        font-size: 14px;
+        font-weight: 400;
+    }
 }
