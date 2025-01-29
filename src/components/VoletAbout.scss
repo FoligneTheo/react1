@@ -1,0 +1,45 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    padding: 30px;
+
+    &__item {
+        background-color: #ff6060; 
+        color: white; 
+        border-radius: 5px; 
+        overflow: hidden; 
+        cursor: pointer;
+        transition: all 0.3s ease; 
+
+        &--active {
+            .accordion__header {
+                background-color: #ff4040;
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    &__title {
+        text-align: left;
+    }
+
+    &__icon {
+        font-size: 18px;
+    }
+
+    &__content {
+        padding: 15px 20px;
+        font-size: 14px;
+        background-color: #d1d1d1;
+    }
+}

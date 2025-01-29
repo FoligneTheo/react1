@@ -1,10 +1,15 @@
 import React from "react";
+import image from '../img/BannerAbout.png';
+import Banner from '../components/BannerAbout';
+import VoletAbout from "../components/VoletAbout";
+
 
 const About = () => {
     return (
         <div>
-            <h1>À propos de nous</h1>
-            <p>Cette page parle de notre application React.</p>
+            <Banner image={image} />
+            <VoletAbout />
+            
         </div>
     );
 };
