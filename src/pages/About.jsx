@@ -2,14 +2,13 @@ import React from "react";
 import image from '../img/BannerAbout.png';
 import Banner from '../components/BannerAbout';
 import VoletAbout from "../components/VoletAbout";
-
+import StyleAbout from '../pages/About.scss';
 
 const About = () => {
     return (
-        <div>
+        <div className="about-container">
             <Banner image={image} />
             <VoletAbout />
-            
         </div>
     );
 };

@@ -8,3 +8,13 @@
     max-width: 1175px;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 500px) {
+
+    .card-list {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 40px;
+    }
+
+}

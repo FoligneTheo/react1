@@ -26,3 +26,13 @@
     font-weight: bold;
     text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+    .banner {
+        height: 130px;
+    }
+
+    .banner__text {
+        font-size: 30px;
+    }
+}
