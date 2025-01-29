@@ -120,46 +120,62 @@
         }
     }
 
-    /* Boutons Description et Équipements */
-    &__buttons {
+    .accordion {
         display: flex;
-        justify-content: center;
-        gap: 76px;
-        margin-top: 30px;
-
-        .toggle-button {
-            background-color: #ff6060;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            width: 800px;
-            text-align: left;
-
-            &:hover {
-                background-color: #ff4040;
+        flex-direction: row; /* Affichage en ligne */
+        gap: 10px; /* Espacement horizontal entre les items */
+      
+        &__item {
+          background-color: #ff6060;
+          color: white;
+          border-radius: 5px;
+          overflow: hidden;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          flex: 1; /* Les items prennent un espace égal en ligne */
+      
+          &--active {
+            .accordion__header {
+              background-color: #ff4040; /* Couleur plus foncée si actif */
             }
+          }
         }
-    }
-
-    /* Description et Équipements */
-    &__description, &__equipments {
-        padding: 10px;
-        background-color: #f9f9f9;
-        border-radius: 5px;
-        margin-top: 10px;
-        font-size: 16px;
-        
-
+      
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px 20px;
+          font-size: 16px;
+          font-weight: bold;
+          transition: background-color 0.3s ease;
+        }
+      
+        &__title {
+          text-align: left;
+        }
+      
+        &__icon {
+          font-size: 18px; /* Taille de l'icône */
+        }
+      
+        &__content {
+          padding: 15px 20px;
+          font-size: 14px;
+          background-color: #fff; /* Fond blanc pour le contenu */
+          color: #000;
+          border-top: 1px solid #ddd; /* Séparation avec le contenu */
+        }
+      
         ul {
-            list-style-type: none;
-            padding: 0;
-
-            li {
-                margin-bottom: 5px;
-            }
+          list-style-type: none;
+          padding: 0;
+      
+          li {
+            margin-bottom: 5px;
+          }
         }
-    }
+      }
+      
+      
 }

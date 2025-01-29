@@ -7,10 +7,15 @@ function LogementDetails() {
     const { id } = useParams();
     const logement = logements.find((item) => item.id === id);
 
-    // State pour le carrousel et les sections
+    // State pour le carrousel
     const [currentImage, setCurrentImage] = useState(0);
-    const [isDescriptionOpen, setDescriptionOpen] = useState(false);
-    const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
+
+    // State pour les volets Description et Équipements
+    const [openValue, setOpenValue] = useState(null);
+
+    const toggleValue = (index) => {
+        setOpenValue(openValue === index ? null : index);
+    };
 
     if (!logement) {
         return <h2>Logement non trouvé</h2>;
@@ -65,35 +70,54 @@ function LogementDetails() {
                 </div>
             </div>
 
-            {/* Boutons Description et Équipements */}
-            <div className="logement-details__buttons">
-                <button
-                    className="toggle-button"
-                    onClick={() => setDescriptionOpen((prev) => !prev)}
+            {/* Volets Description et Équipements */}
+            <div className="accordion">
+                {/* Volet Description */}
+                <div
+                    className={`accordion__item ${
+                        openValue === 0 ? "accordion__item--active" : ""
+                    }`}
                 >
-                    Description
-                </button>
-                <button
-                    className="toggle-button"
-                    onClick={() => setEquipmentsOpen((prev) => !prev)}
-                >
-                    Équipements
-                </button>
-            </div>
-
-            {/* Sections Description et Équipements */}
-            {isDescriptionOpen && (
-                <div className="logement-details__description">
-                    <p>{logement.description}</p>
+                    <div
+                        className="accordion__header"
+                        onClick={() => toggleValue(0)}
+                    >
+                        <span className="accordion__title">Description</span>
+                        <span className="accordion__icon">
+                            {openValue === 0 ? "▲" : "▼"}
+                        </span>
+                    </div>
+                    {openValue === 0 && (
+                        <div className="accordion__content">{logement.description}</div>
+                    )}
                 </div>
-            )}
-            {isEquipmentsOpen && (
-                <ul className="logement-details__equipments">
-                    {logement.equipments.map((equipment, index) => (
-                        <li key={index}>{equipment}</li>
-                    ))}
-                </ul>
-            )}
+
+                {/* Volet Équipements */}
+                <div
+                    className={`accordion__item ${
+                        openValue === 1 ? "accordion__item--active" : ""
+                    }`}
+                >
+                    <div
+                        className="accordion__header"
+                        onClick={() => toggleValue(1)}
+                    >
+                        <span className="accordion__title">Équipements</span>
+                        <span className="accordion__icon">
+                            {openValue === 1 ? "▲" : "▼"}
+                        </span>
+                    </div>
+                    {openValue === 1 && (
+                        <div className="accordion__content">
+                            <ul>
+                                {logement.equipments.map((equipment, index) => (
+                                    <li key={index}>{equipment}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }
