@@ -123,7 +123,8 @@
     .accordion {
         display: flex;
         flex-direction: row; /* Affichage en ligne */
-        gap: 10px; /* Espacement horizontal entre les items */
+        gap: 40px; /* Espacement horizontal entre les items */
+        padding-top: 30px;
       
         &__item {
           background-color: #ff6060;
