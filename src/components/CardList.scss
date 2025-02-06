@@ -5,16 +5,21 @@
     padding: 40px;
     background-color: #f9f9f9;
     border-radius: 15px;
-    max-width: 1175px;
+    max-width: 1735px;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
 
     .card-list {
         display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    max-width: 1735px;
+    margin: 0 auto;
     }
 
 }

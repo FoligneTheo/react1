@@ -1,5 +1,5 @@
 .logement-details {
-    padding: 50px;
+    padding: 100px;
 
     &__carousel {
         position: relative;
@@ -15,30 +15,18 @@
         }
 
         .carousel__button {
-            position: absolute;
-            top: 50%; /* Centre verticalement par rapport à l'image */
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            font-size: 2rem;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    width: auto; /* Ajuste la taille selon le contenu */
+    height: auto;
+    cursor: pointer;
+    background: none; /* Assure qu'aucun fond ne s'affiche */
+}
 
-            &.prev {
-                left: 10px;
-            }
-
-            &.next {
-                right: 10px;
-            }
-
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.7);
-            }
-        }
 
         p {
             position: absolute;
@@ -46,7 +34,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: #fff;
-            background-color: rgba(0, 0, 0, 0.6);
+            // background-color: rgba(0, 0, 0, 0.6);
             padding: 5px 10px;
             border-radius: 5px;
         }
@@ -67,7 +55,8 @@
         text-align: left;
 
         .logement-details__title {
-            font-size: 36px;
+        font-family: Montserrat;
+            font-size: 36px;    
             color: #ff6060; /* Même couleur que le logo */
             margin-bottom: 10px;
         }
@@ -122,61 +111,107 @@
 
     .accordion {
         display: flex;
-        flex-direction: row; /* Affichage en ligne */
-        gap: 40px; /* Espacement horizontal entre les items */
+        flex-direction: row; /* Alignement horizontal */
+        gap: 20px;
         padding-top: 30px;
+        align-items: flex-start; /* Les volets ne s'alignent plus sur la plus grande hauteur */
+      }
       
-        &__item {
-          background-color: #ff6060;
-          color: white;
-          border-radius: 5px;
-          overflow: hidden;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          flex: 1; /* Les items prennent un espace égal en ligne */
+      .accordion__item {
+        background-color: #ff6060;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        flex: 1; /* Tous les items ont une taille égale */
+        overflow: hidden;
+      }
       
-          &--active {
-            .accordion__header {
-              background-color: #ff4040; /* Couleur plus foncée si actif */
-            }
-          }
-        }
+      .accordion__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
       
-        &__header {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 15px 20px;
-          font-size: 16px;
-          font-weight: bold;
-          transition: background-color 0.3s ease;
-        }
+      .accordion__content {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 51.34px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        ;
+        padding: 15px 20px;
+        font-size: 14px;
+        background-color: #fff;
+        color: #000;
+        border-top: 1px solid #ddd;
+        overflow: hidden;
+        height: 0; /* Hauteur par défaut : masqué */
+        transition: height 0.3s ease; /* Animation fluide sur la hauteur */
+      }
       
-        &__title {
-          text-align: left;
-        }
-      
-        &__icon {
-          font-size: 18px; /* Taille de l'icône */
-        }
-      
-        &__content {
-          padding: 15px 20px;
-          font-size: 14px;
-          background-color: #fff; /* Fond blanc pour le contenu */
-          color: #000;
-          border-top: 1px solid #ddd; /* Séparation avec le contenu */
-        }
-      
-        ul {
-          list-style-type: none;
-          padding: 0;
-      
-          li {
-            margin-bottom: 5px;
-          }
-        }
+      .accordion__item--active .accordion__content {
+        height: auto; /* Développe uniquement l'élément actif */
       }
       
       
+      
+      .logement-details__carousel-container {
+        width: 100%;
+        max-width: 1240px; // Taille maximale du carrousel
+        margin: auto;
+    }
+    
+    .logement-details__carousel {
+        position: relative;
+        width: 100%;
+        height: 420px; // Hauteur adaptée
+    
+        &-image {
+            width: 100%; // L'image prend toute la largeur du bloc
+            height: 100%;
+            object-fit: cover; // Assure le bon ajustement de l'image
+            border-radius: 10px;
+        }
+    }
+    
+    .carousel__button {
+        position: absolute;
+        top: 50%;
+        // transform: translateY(-50%);
+        // background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+    
+        &.prev {
+            left: 10px;
+        }
+    
+        &.next {
+            right: 10px;
+        }
+    
+    }
+    
+    
+}
+
+
+@media screen and (max-width: 768px) {
+    .logement-details .accordion {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .logement-details .accordion__header {
+        width: 470px;
+      }
 }

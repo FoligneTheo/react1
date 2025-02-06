@@ -34,16 +34,19 @@ function LogementDetails() {
     return (
         <div className="logement-details">
             {/* Carrousel */}
-            <div className="logement-details__carousel">
-                <img
-                    src={logement.pictures[currentImage]}
-                    alt={`Photo ${currentImage + 1}`}
-                    className="logement-details__carousel-image"
-                />
-                <button className="carousel__button prev" onClick={handlePrevImage}>‹</button>
-                <button className="carousel__button next" onClick={handleNextImage}>›</button>
-                <p>{currentImage + 1}/{logement.pictures.length}</p>
+            <div className="logement-details__carousel-container">
+    <div className="logement-details__carousel">
+        <img
+            src={logement.pictures[currentImage]}
+            alt={`Photo ${currentImage + 1}`}
+            className="logement-details__carousel-image"
+        />
+        <button className="carousel__button prev" onClick={handlePrevImage}>‹</button>
+        <button className="carousel__button next" onClick={handleNextImage}>›</button>
+        <p>{currentImage + 1}/{logement.pictures.length}</p>
+    </div>
             </div>
+
 
             {/* Contenu principal */}
             <div className="logement-details__content">

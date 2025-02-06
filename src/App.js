@@ -14,6 +14,7 @@ function App() {
     <Router>
       <div>
         <Header />
+        <div class="Middle">
         <Routes>
           <Route path="/" element={<Acceuil />} />
           <Route path="/about" element={<About />} />
@@ -21,6 +22,8 @@ function App() {
           <Route path="/" element={<CardList />} />
           <Route path="/logements/:id" element={<LogementDetails />} />
         </Routes>
+        </div>
+
         <Footer />
       </div>
     </Router>
