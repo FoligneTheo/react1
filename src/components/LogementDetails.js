@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import logements from '../data/logementsreact.json';
 import './LogementDetails.scss';
+import StarRating from './StarRating';
 
 function LogementDetails() {
     const { id } = useParams();
@@ -69,7 +70,7 @@ function LogementDetails() {
                         className="host__picture"
                     />
                     <p className="host__name">{logement.host.name}</p>
-                    <p className="host__rating">Note : {logement.rating} ★</p>
+                    <StarRating rating={parseInt(logement.rating)} />
                 </div>
             </div>
 
