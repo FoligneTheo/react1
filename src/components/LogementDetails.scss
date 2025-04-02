@@ -55,7 +55,6 @@
         text-align: left;
 
         .logement-details__title {
-        font-family: Montserrat;
             font-size: 36px;    
             color: #ff6060; /* Même couleur que le logo */
             margin-bottom: 10px;
@@ -83,32 +82,39 @@
     }
 
     /* Section droite (Hôte et note) */
-    &__right {
-        flex: 0.3; /* Largeur fixe pour l'hôte */
+    .logement-details__right {
+        flex: 0.3;
         display: flex;
         flex-direction: column;
-        align-items: end;
-
-        .host__picture {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
+        align-items: flex-end;
+    
+        .host {
+            display: flex;
+            align-items: center;
+            gap: 10px; // espace entre le nom et la photo
             margin-bottom: 10px;
-        }
-
-        .host__name {
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .host__rating {
-            font-size: 14px;
-            color: #ff6060;
+    
+            &__info {
+                text-align: right;
+            }
+    
+            .host__name {
+                color: #ff6060; // rouge
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 1.2;
+                margin: 0;
+            }
+    
+            .host__picture {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
         }
     }
-
+    
     .accordion {
         display: flex;
         flex-direction: row; /* Alignement horizontal */
@@ -214,4 +220,19 @@
       .logement-details .accordion__header {
         width: 470px;
       }
+
+
+      .logement-details__right {
+        align-items: flex-start;
+    
+        .host {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+    
+            &__info {
+                text-align: left;
+            }
+        }
+    }
+    
 }
