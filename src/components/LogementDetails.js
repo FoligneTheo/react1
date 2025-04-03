@@ -74,7 +74,7 @@ function LogementDetails() {
                     </div>
                     <StarRating rating={parseInt(logement.rating)} />
                 </div>
-            </div> {/* 👈 Ceci ferme correctement logement-details__content */}
+            </div>
 
             {/* Volets Description et Équipements */}
             <div className="accordion">
