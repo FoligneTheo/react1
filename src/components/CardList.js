@@ -6,7 +6,7 @@ import './CardList.scss';
 function CardList() {
     return (
         <div className="card-list">
-            {logements.slice(0, 6).map((logement) => (
+            {logements.map((logement) => (
                 <Card
                     key={logement.id}
                     id={logement.id}
