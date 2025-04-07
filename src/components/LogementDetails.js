@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import logements from '../data/logementsreact.json';
 import './LogementDetails.scss';
 import StarRating from './StarRating';
+import NotFound from '../pages/NotFound';
 
 function LogementDetails() {
     const { id } = useParams();
@@ -16,7 +17,8 @@ function LogementDetails() {
     };
 
     if (!logement) {
-        return <h2>Logement non trouvé</h2>;
+        // return <h2>Logement non trouvé</h2>;
+        return <NotFound />;
     }
 
     const handleNextImage = () => {
