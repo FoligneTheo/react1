@@ -11,7 +11,7 @@ import LogementDetails from './components/LogementDetails';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/react1">
       <div>
         <Header />
         <div class="Middle">
