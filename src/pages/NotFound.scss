@@ -34,3 +34,11 @@
     color: #ff6060;
     border-color: #ff6060;
 }
+
+
+@media screen and (max-width: 768px) {
+    .not-found h1 {
+        font-size: 202px;
+       
+    }
+}
