@@ -13,3 +13,10 @@ html, body {
 .about-container .accordion {
     padding: 40px;
 }
+
+@media screen and (max-width: 768px) {
+    .about-container .accordion {
+        padding: 0px;
+    }
+    
+}
