@@ -1,23 +1,31 @@
 .footer {
-    background-color: #000; /* Fond noir */
-    color: #fff; /* Texte blanc */
-    padding: 20px 0; /* Espacement vertical */
+    min-height: 10vh;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
 
     &__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px; /* Espacement entre les éléments */
+        gap: 10px;
     }
 
     &__logo {
-        width: 120px; /* Taille du logo */
+        width: 120px;
         height: auto;
     }
 
     &__text {
         font-size: 14px;
         font-weight: 400;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        min-height: 15vh;
+
     }
 }
