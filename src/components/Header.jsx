@@ -5,13 +5,13 @@ import './Header.scss';
 
 const Header = () => {
     return (
-        <div className="Header">
-            <img src={logo} alt="LOGOkasa" />
-            <Menu />
-        </div>
+        <header className="Header">
+            <div className="Header__container">
+                <img src={logo} alt="LOGOkasa" className="logo" />
+                <Menu />
+            </div>
+        </header>
     );
 };
 
 export default Header;
-
-

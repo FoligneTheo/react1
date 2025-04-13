@@ -1,20 +1,27 @@
 .Header {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // padding: 10px 20px;
+    justify-content: center;
     background-color: white;
     margin-top: 40px;
-  margin-left: 100px;
-  margin-right: 100px;
+    // padding: 0 20px;
+
+    &__container {
+        width: 100%;
+        max-width: 1240px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
-.Header .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
     display: flex;
     align-items: center;
 }
+
 
 .Menu {
     nav {
