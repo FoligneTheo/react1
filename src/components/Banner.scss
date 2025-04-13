@@ -4,8 +4,10 @@
     background-size: cover;
     background-position: center;
     border-radius: 30px;
-    margin: 20px;
+    margin: 20px auto;
     overflow: hidden;
+    max-width: 1240px;
+    width: 100%;      
 }
 
 .banner__overlay {
