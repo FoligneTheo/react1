@@ -29,7 +29,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 5px 20px;
       font-size: 16px;
       font-weight: bold;
       transition: background-color 0.3s ease;
@@ -69,10 +69,6 @@
         list-style: none;
         padding-left: 0;
         margin: 0;
-      }
-  
-      li {
-        margin-bottom: 10px;
       }
   
       p {
