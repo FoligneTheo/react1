@@ -20,7 +20,7 @@ const Volet = ({ items }) => {
           <div className="accordion__header" onClick={() => toggle(index)}>
             <span className="accordion__title">{item.title}</span>
             <button
-  className={`carousel__button accordion__icon ${openStates[index] ? 'rotate' : ''}`}
+  className={`accordion__icon ${openStates[index] ? 'rotate' : ''}`}
   onClick={(e) => {
     e.stopPropagation();
     toggle(index);
@@ -28,6 +28,7 @@ const Volet = ({ items }) => {
 >
   ›
 </button>
+
 
 
           </div>
