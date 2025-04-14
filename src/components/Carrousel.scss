@@ -47,3 +47,9 @@
         right: 10px;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .carousel p {
+        color: transparent;
+    }
+}

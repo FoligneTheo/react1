@@ -22,9 +22,14 @@ function Carousel({ pictures }) {
                     alt={`Photo ${currentImage + 1}`}
                     className="carousel-image"
                 />
-                <button className="carousel__button prev" onClick={handlePrevImage}>‹</button>
-                <button className="carousel__button next" onClick={handleNextImage}>›</button>
-                <p>{currentImage + 1}/{pictures.length}</p>
+
+                {pictures.length > 1 && (
+                    <>
+                        <button className="carousel__button prev" onClick={handlePrevImage}>‹</button>
+                        <button className="carousel__button next" onClick={handleNextImage}>›</button>
+                        <p>{currentImage + 1}/{pictures.length}</p>
+                    </>
+                )}
             </div>
         </div>
     );
