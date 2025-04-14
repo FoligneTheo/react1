@@ -3,7 +3,7 @@
     height: 223px;
     background-size: cover;
     background-position: center;
-    border-radius: 30px;
+    border-radius: 25px;
     margin: 20px auto;
     overflow: hidden;
     max-width: 1240px;
@@ -23,18 +23,23 @@
 }
 
 .banner__text {
+    padding: 0 20px;
     color: white;
     font-size: 48px;
     font-weight: bold;
     text-align: center;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .banner {
         height: 130px;
+        border-radius: 10px;
     }
 
     .banner__text {
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
         font-size: 30px;
     }
 }

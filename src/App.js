@@ -11,8 +11,8 @@ import LogementDetails from './components/LogementDetails';
 function App() {
   return (
     <Router basename="/react1">
-      <div className="page-container">
         <Header />
+      <div className="page-container">
 
         <div className="Middle">
           <Routes>
@@ -23,8 +23,8 @@ function App() {
           </Routes>
         </div>
 
-        <Footer />
       </div>
+        <Footer />
     </Router>
   );
 }

@@ -1,19 +1,21 @@
 .Header {
     width: 100%;
+    background-color: white;
     display: flex;
     justify-content: center;
-    background-color: white;
     margin-top: 40px;
-    // padding: 0 20px;
-
+  
     &__container {
-        width: 100%;
-        max-width: 1240px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      width: 100%;
+      max-width: 1240px;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-}
+  }
+  
 
 .logo {
     font-size: 24px;
@@ -48,4 +50,12 @@
             }
         }
     }
+}
+
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 120px;
+    }
+
 }

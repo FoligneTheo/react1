@@ -26,6 +26,12 @@
 @media screen and (max-width: 768px) {
     .footer {
         min-height: 15vh;
+    }
 
+    .footer {
+    
+        &__content {
+padding-top: 25px;
+        }
     }
 }
