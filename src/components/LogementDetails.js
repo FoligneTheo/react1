@@ -5,6 +5,7 @@ import './LogementDetails.scss';
 import StarRating from './StarRating';
 import NotFound from '../pages/NotFound';
 import Volet from './Volet';
+import Carrousel from '../components/Carrousel';
 
 function LogementDetails() {
     const { id } = useParams();
@@ -32,18 +33,7 @@ function LogementDetails() {
     return (
         <div className="logement-details">
             {/* Carrousel */}
-            <div className="logement-details__carousel-container">
-                <div className="logement-details__carousel">
-                    <img
-                        src={logement.pictures[currentImage]}
-                        alt={`Photo ${currentImage + 1}`}
-                        className="logement-details__carousel-image"
-                    />
-                    <button className="carousel__button prev" onClick={handlePrevImage}>‹</button>
-                    <button className="carousel__button next" onClick={handleNextImage}>›</button>
-                    <p>{currentImage + 1}/{logement.pictures.length}</p>
-                </div>
-            </div>
+            <Carrousel pictures={logement.pictures} />
 
             {/* Contenu principal */}
             <div className="logement-details__content">
@@ -60,6 +50,7 @@ function LogementDetails() {
 
                 {/* Section droite */}
                 <div className="logement-details__right">
+                            <StarRating rating={parseInt(logement.rating)} />
                     <div className="host">
                         <div className="host__info">
                             {logement.host.name.split(' ').map((part, index) => (
@@ -72,7 +63,6 @@ function LogementDetails() {
                             className="host__picture"
                         />
                     </div>
-                    <StarRating rating={parseInt(logement.rating)} />
                 </div>
             </div>
 

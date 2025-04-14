@@ -1,0 +1,49 @@
+.carousel-container {
+    width: 100%;
+    max-width: 1240px;
+    margin: auto;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 420px;
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    p {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    background: none;
+
+    &.prev {
+        left: 10px;
+    }
+
+    &.next {
+        right: 10px;
+    }
+}
