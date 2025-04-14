@@ -128,7 +128,7 @@
         color: white;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        // transition: background-color 0.3s ease;
         flex: 1; /* Tous les items ont une taille égale */
         overflow: hidden;
       }
@@ -137,33 +137,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 20px;
+        padding: 5px 20px;
         font-size: 16px;
         font-weight: bold;
       }
       
-      .accordion__content {
-        font-size: 36px;
-        font-weight: 500;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        padding: 15px 20px;
-        font-size: 14px;
-        background-color: #fff;
-        color: #000;
-        border-top: 1px solid #ddd;
+      .accordion__content-wrapper {
         overflow: hidden;
-        height: 0; /* Hauteur par défaut : masqué */
-        transition: height 0.3s ease; /* Animation fluide sur la hauteur */
+        max-height: 0;
+        color: black;
+        transition: max-height 0.4s ease;
       }
-      
-      .accordion__item--active .accordion__content {
-        height: auto; /* Développe uniquement l'élément actif */
-      }
-      
-      
-      
+    
       .logement-details__carousel-container {
         width: 100%;
         max-width: 1240px; // Taille maximale du carrousel
@@ -184,15 +169,15 @@
     }
     
     .carousel__button {
-        position: absolute;
-        top: 50%;
+        // position: absolute;
+        // top: 50%;
         // transform: translateY(-50%);
         // background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        font-size: 2rem;
-        width: 50px;
-        height: 50px;
+        font-size: 40px;
+        // width: 50px;
+        // height: 50px;
         cursor: pointer;
     
         &.prev {

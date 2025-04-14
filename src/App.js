@@ -14,17 +14,17 @@ function App() {
         <Header />
       <div className="page-container">
 
-        <div className="Middle">
+        <main className="Middle">
           <Routes>
             <Route path="/" element={<Acceuil />} />
             <Route path="/about" element={<About />} />
             <Route path="/logements/:id" element={<LogementDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </div>
+        </main>
 
       </div>
-        <Footer />
+      <Footer />
     </Router>
   );
 }
