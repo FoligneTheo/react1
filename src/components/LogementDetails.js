@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import logements from '../data/logementsreact.json';
 import './LogementDetails.scss';
 import StarRating from './StarRating';
 import NotFound from '../pages/NotFound';
@@ -9,21 +8,31 @@ import Carrousel from '../components/Carrousel';
 
 function LogementDetails() {
     const { id } = useParams();
-    const logement = logements.find((item) => item.id === id);
+    const [logement, setLogement] = useState(null);
+    const [error, setError] = useState(false);
 
-    const [currentImage, setCurrentImage] = useState(0);
+    useEffect(() => {
+        fetch(`${process.env.PUBLIC_URL}/data/logementsreact.json`)
+            .then((res) => {
+                if (!res.ok) throw new Error('Erreur de chargement');
+                return res.json();
+            })
+            .then((data) => {
+                const found = data.find((item) => item.id === id);
+                if (!found) {
+                    setError(true);
+                } else {
+                    setLogement(found);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                setError(true);
+            });
+    }, [id]);
 
-    if (!logement) return <NotFound />;
-
-    const handleNextImage = () => {
-        setCurrentImage((prev) => (prev + 1) % logement.pictures.length);
-    };
-
-    const handlePrevImage = () => {
-        setCurrentImage((prev) =>
-            prev === 0 ? logement.pictures.length - 1 : prev - 1
-        );
-    };
+    if (error) return <NotFound />;
+    if (!logement) return <p>Chargement...</p>;
 
     const volets = [
         { title: "Description", content: logement.description },
@@ -32,12 +41,9 @@ function LogementDetails() {
 
     return (
         <div className="logement-details">
-            {/* Carrousel */}
             <Carrousel pictures={logement.pictures} />
 
-            {/* Contenu principal */}
             <div className="logement-details__content">
-                {/* Section gauche */}
                 <div className="logement-details__left">
                     <h1 className="logement-details__title">{logement.title}</h1>
                     <p className="logement-details__location">{logement.location}</p>
@@ -48,9 +54,8 @@ function LogementDetails() {
                     </div>
                 </div>
 
-                {/* Section droite */}
                 <div className="logement-details__right">
-                            <StarRating rating={parseInt(logement.rating)} />
+                    <StarRating rating={parseInt(logement.rating)} />
                     <div className="host">
                         <div className="host__info">
                             {logement.host.name.split(' ').map((part, index) => (
@@ -66,7 +71,6 @@ function LogementDetails() {
                 </div>
             </div>
 
-            {/* Volets Description et Équipements */}
             <Volet items={volets} />
         </div>
     );
