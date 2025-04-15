@@ -20,26 +20,17 @@ const Volet = ({ items }) => {
           <div className="accordion__header" onClick={() => toggle(index)}>
             <span className="accordion__title">{item.title}</span>
             <button
-  className={`accordion__icon ${openStates[index] ? 'rotate' : ''}`}
-  onClick={(e) => {
-    e.stopPropagation();
-    toggle(index);
-  }}
->
-  ›
-</button>
-
-
-
+              className={`accordion__icon ${openStates[index] ? 'rotate' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                toggle(index);
+              }}
+            >
+              ›
+            </button>
           </div>
 
-          <div
-            className="accordion__content-wrapper"
-            style={{
-              maxHeight: openStates[index] ? '500px' : '0',
-              transition: 'max-height 0.4s ease',
-            }}
-          >
+          <div className="accordion__content-wrapper">
             <div className="accordion__content">
               {Array.isArray(item.content) ? (
                 <ul>

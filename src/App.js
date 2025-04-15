@@ -6,7 +6,6 @@ import NotFound from './pages/NotFound';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import LogementDetails from './components/LogementDetails';
-import CardList from './components/CardList';
 
 function App() {
   return (
