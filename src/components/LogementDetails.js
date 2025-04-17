@@ -58,7 +58,7 @@ function LogementDetails() {
                     <StarRating rating={parseInt(logement.rating)} />
                     <div className="host">
                         <div className="host__info">
-                            <p className="host__name">{logement.host.name}</p>
+                            <p className="host__name">{logement.host.name.replace(' ', '\n')}</p>
                         </div>
                         <img
                             src={logement.host.picture}
