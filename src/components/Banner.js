@@ -5,7 +5,7 @@ function Banner({ image, text }) {
     return (
         <div className="banner" style={{ backgroundImage: `url(${image})` }}>
             <div className="banner__overlay">
-                <h1 className="banner__text">{text}</h1>
+                <div className="banner__text">{text}</div>
             </div>
         </div>
     );
