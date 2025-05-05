@@ -9,7 +9,7 @@ import LogementDetails from './components/LogementDetails';
 
 function App() {
   return (
-    <Router basename="/react1">
+    <Router>
         <Header />
       <div className="page-container">
 
